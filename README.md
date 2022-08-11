@@ -1,4 +1,4 @@
-![Kelp](/Kelp_Logo.png)
+![Kelp](/img/Kelp_Logo.png)
 
 ## Date: 08/11/2022
 
