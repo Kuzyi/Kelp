@@ -1,4 +1,4 @@
-![Image](/Kelp_Logo.png)
+![Kelp](/Kelp_Logo.png)
 
 ## Date: 08/11/2022
 
@@ -14,11 +14,11 @@ Kelp is an online surf-spot review site in which surfers share their experiences
 
 ### **_Component Hierarchy Diagram_**
 
-![Image](/img/CHD.png)
+![Component Hierarchy Diagram](/img/CHD.png)
 
 ### **_ERD_**
 
-![Image](/img/ERD.png)
+![ERD](/img/ERD.png)
 
 ### **_Trello Board_**
 
