@@ -14,7 +14,13 @@ Kelp is an online surf-spot review site in which surfers share their experiences
 
 ## **_Getting Started_**
 
-### **_Component Diagram_**
+### **_Component Hierarchy Diagram_**
+
+![Image](/img/CHD.png)
+
+### **_ERD_**
+
+![Image](/img/ERD.png)
 
 ## **_Technologies_**
 
