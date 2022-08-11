@@ -22,6 +22,10 @@ Kelp is an online surf-spot review site in which surfers share their experiences
 
 ![Image](/img/ERD.png)
 
+### **_Trello Board_**
+
+[Trello Board](https://trello.com/b/6bJ9ofrn/project-3-board)
+
 ## **_Technologies_**
 
 - Postgres
