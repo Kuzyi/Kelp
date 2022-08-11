@@ -1,5 +1,3 @@
-# Kelp
-
 ![Image](/Kelp_Logo.png)
 
 ## Date: 08/11/2022
