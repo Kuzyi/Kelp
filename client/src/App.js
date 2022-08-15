@@ -1,23 +1,14 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Route, Routes } from 'react-router'
 import Nav from './components/Nav'
 import Register from './pages/Register'
 import SignIn from './pages/SignIn'
+import Feed from './pages/Feed'
 import Home from './pages/Home'
-import './App.css'
+import './styles/App.css'
 import { CheckSession } from './services/Auth'
 
-function App() {
-  const [location, setLocation] = useState()
-
-  useEffect(() => {
-    const getLocation = async () => {
-      const res = await axios.get(`${BASE_URL}/api/locations/view`)
-      console.log(res.data)
-    }
-    getLocation()
-  }, [])
-
+const App = () => {
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState(null)
 
@@ -41,6 +32,7 @@ function App() {
       checkToken()
     }
   }, [])
+
   return (
     <div className="App">
       <Nav
@@ -61,6 +53,10 @@ function App() {
             }
           />
           <Route path="/register" element={<Register />} />
+          <Route
+            path="/feed"
+            element={<Feed user={user} authenticated={authenticated} />}
+          />
         </Routes>
       </main>
     </div>

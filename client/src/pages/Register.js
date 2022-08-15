@@ -18,20 +18,18 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    // submit the form
     await RegisterUser({
       name: formValues.name,
       email: formValues.email,
       password: formValues.password
     })
-    // reset the form valuse based on seccessful form submission
+
     setFormValues({
       name: '',
       email: '',
       password: '',
       confirmPassword: ''
     })
-    // navigate to the login page
     navigate('/signin')
   }
 
