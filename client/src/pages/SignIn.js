@@ -1,15 +1,14 @@
 import { useState } from 'react'
-import { SignInUser } from '../services/Auth'
+import { SignInUser, signInUser } from '../services/Auth'
 import { useNavigate } from 'react-router-dom'
 
 const SignIn = (props) => {
   const [formValues, setFormValues] = useState({ email: '', password: '' })
+  let navigate = useNavigate()
 
   const handleChange = (e) => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value })
   }
-
-  let navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault()

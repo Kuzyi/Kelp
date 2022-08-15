@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 
 const Register = () => {
   const [formValues, setFormValues] = useState({
-    name: '',
+    username: '',
     email: '',
     password: '',
     confirmPassword: ''
@@ -18,20 +18,19 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    // submit the form
+    console.log(formValues)
     await RegisterUser({
-      name: formValues.name,
+      username: formValues.username,
       email: formValues.email,
       password: formValues.password
     })
-    // reset the form valuse based on seccessful form submission
+
     setFormValues({
-      name: '',
+      username: '',
       email: '',
       password: '',
       confirmPassword: ''
     })
-    // navigate to the login page
     navigate('/signin')
   }
 
@@ -40,10 +39,11 @@ const Register = () => {
       <div className="card-overlay centered">
         <form className="col" onSubmit={handleSubmit}>
           <div className="input-wrapper">
-            <label htmlFor="name">Name</label>
+            <label htmlFor="username">Name</label>
             <input
               onChange={handleChange}
-              name="name"
+              name="username"
+              id="username"
               type="text"
               placeholder="John Smith"
               value={formValues.name}
@@ -55,6 +55,7 @@ const Register = () => {
             <input
               onChange={handleChange}
               name="email"
+              id="email"
               type="email"
               placeholder="example@example.com"
               value={formValues.email}
@@ -68,6 +69,7 @@ const Register = () => {
               onChange={handleChange}
               type="password"
               name="password"
+              id="password"
               value={formValues.password}
               required
             />
@@ -78,6 +80,7 @@ const Register = () => {
               onChange={handleChange}
               type="password"
               name="confirmPassword"
+              id="confirmPassword"
               value={formValues.confirmPassword}
               required
             />
