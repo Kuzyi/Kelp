@@ -5,7 +5,8 @@ export const SignInUser = async (data) => {
     const res = await Client.post('/api/auth/login', data)
     // Set the current signed in users token to localStorage
     localStorage.setItem('token', res.data.token)
-    return res.data.user
+    console.log(res.data)
+    return res.data.user //changed to username from user
   } catch (error) {
     throw error
   }
@@ -24,7 +25,7 @@ export const RegisterUser = async (data) => {
 export const CheckSession = async () => {
   try {
     // Checks if the current token if it exists is valid
-    const res = await Client.get('/auth/session')
+    const res = await Client.get('api/auth/session') //maybe use data???
     return res.data
   } catch (error) {
     throw error
