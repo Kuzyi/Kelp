@@ -22,6 +22,7 @@ const LocationDetails = () => {
       <h3>
         {locationDetails.city} {locationDetails.state}
       </h3>
+      <h5></h5>
       <img src={locationDetails.image} />
     </div>
   )
