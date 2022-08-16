@@ -48,6 +48,9 @@ const SignIn = (props) => {
             Sign In
           </button>
         </form>
+        <section className="welcome-signin">
+          <button onClick={() => navigate('/register')}>Register</button>
+        </section>
       </div>
     </div>
   )
