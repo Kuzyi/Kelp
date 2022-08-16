@@ -8,23 +8,14 @@ const Feed = ({ user, authenticated }) => {
 
   useEffect(() => {
     const handlePosts = async () => {
-      const data = await GetPosts()
-      setPosts(data)
+      setPosts([]) // const data = await GetPosts()
     }
     handlePosts()
   }, [])
 
-  return user && authenticated ? (
+  return user && authenticated ? ( //very important - use later
     <div className="grid col-4">
-      {posts.map((post) => (
-        <div className="card" key={post.id}>
-          <h3>{post.title}</h3>
-          <div>
-            <img src={post.image} alt="post" />
-          </div>
-          <p>{post.body.substring(0, 80)}...</p>
-        </div>
-      ))}
+      <h1>Hey you are authentic!</h1>
     </div>
   ) : (
     <div className="protected">
