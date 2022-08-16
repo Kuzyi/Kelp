@@ -5,6 +5,7 @@ import Register from './pages/Register'
 import SignIn from './pages/SignIn'
 import LocationList from './pages/LocationList'
 import Home from './pages/Home'
+import LocationDetails from './pages/LocationDetails'
 import './styles/App.css'
 import { CheckSession } from './services/Auth'
 import axios from 'axios'
@@ -70,6 +71,7 @@ const App = () => {
             path="/LocationList"
             element={<LocationList user={user} authenticated={authenticated} />}
           />
+          <Route path="/locations/:id" element={<LocationDetails />} />
         </Routes>
       </main>
     </div>

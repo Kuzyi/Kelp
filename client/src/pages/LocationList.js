@@ -15,10 +15,16 @@ const LocationList = ({ user, authenticated }) => {
     handleLocations()
   }, [])
 
+  const showLocationDetails = (locations) => {
+    navigate(`/locations/${locations.id}`)
+  }
+
   return (
     <div>
       {locations.map((location) => (
-        <h1>{location.beachName}</h1>
+        <div onClick={() => showLocationDetails(location)} key={location.id}>
+          <h1>{location.beachName}</h1>
+        </div>
       ))}
     </div>
   )
