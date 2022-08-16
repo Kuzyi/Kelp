@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router'
 import Nav from './components/Nav'
 import Register from './pages/Register'
 import SignIn from './pages/SignIn'
-import Feed from './pages/Feed'
+import LocationList from './pages/LocationList'
 import Home from './pages/Home'
 import './styles/App.css'
 import { CheckSession } from './services/Auth'
@@ -52,7 +52,10 @@ const App = () => {
       />
       <main>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route
+            path="/"
+            element={<Home user={user} authenticated={authenticated} />}
+          />
           <Route
             path="/signin"
             element={
@@ -64,8 +67,8 @@ const App = () => {
           />
           <Route path="/register" element={<Register />} />
           <Route
-            path="/feed"
-            element={<Feed user={user} authenticated={authenticated} />}
+            path="/LocationList"
+            element={<LocationList user={user} authenticated={authenticated} />}
           />
         </Routes>
       </main>
