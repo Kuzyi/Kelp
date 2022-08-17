@@ -78,7 +78,12 @@ const App = () => {
             path="/LocationList"
             element={<LocationList user={user} authenticated={authenticated} />}
           />
-          <Route path="/locations/:id" element={<LocationDetails />} />
+          <Route
+            path="/locations/:id"
+            element={
+              <LocationDetails user={user} authenticated={authenticated} />
+            }
+          />
         </Routes>
       </main>
     </div>

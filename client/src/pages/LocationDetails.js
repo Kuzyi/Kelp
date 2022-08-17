@@ -3,7 +3,7 @@ import Client from '../services/api'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
-const LocationDetails = () => {
+const LocationDetails = ({ user, authenticated }) => {
   let { id } = useParams()
   const [locationDetails, setLocationDetails] = useState('')
   const [comments, setComments] = useState([])
@@ -33,6 +33,19 @@ const LocationDetails = () => {
         <div>
           <h3>{comment.User.username}</h3>
           <p>{comment.content}</p>
+          {authenticated && user && comment.User.id === user.id ? (
+            <button
+              onClick={async () => {
+                const commentToDelete = parseInt(comment.id)
+                console.log(commentToDelete)
+                console.log(comment)
+                console.log(user)
+                await Client.delete(`/api/comments/${commentToDelete}`)
+              }}
+            >
+              X
+            </button>
+          ) : null}
         </div>
       ))}
       <form>
