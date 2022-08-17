@@ -27,7 +27,7 @@ export const CheckSession = async () => {
     // Checks if the current token if it exists is valid
     const res = await Client.get('/api/auth/session') //maybe use data???
     console.log('HEY, this is the frontend check session!', res)
-    return res.data.token //this was res.data changed to res.data.token
+    return res.data
   } catch (error) {
     throw error
   }

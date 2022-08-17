@@ -40,9 +40,7 @@ const LocationDetails = ({ user, authenticated }) => {
                 console.log(commentToDelete)
                 console.log(comment)
                 console.log(user)
-                await axios.delete(
-                  `http://localhost:3001/api/comments/${commentToDelete}`
-                )
+                await Client.delete(`/api/comments/${commentToDelete}`)
               }}
             >
               X
