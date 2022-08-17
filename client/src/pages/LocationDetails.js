@@ -12,12 +12,13 @@ const LocationDetails = () => {
     const getLocation = async () => {
       const res = await axios.get(`http://localhost:3001/api/locations/${id}`)
       setLocationDetails(res.data)
-      console.log(res.data)
     }
     const getComments = async () => {
-      const res = await axios.get(`http://localhost:3001/api/comments/${id}/5`)
+      const res = await axios.get(`http://localhost:3001/api/comments/${id}`)
+      setComments(res.data)
+      console.log(res.data)
     }
-
+    getComments()
     getLocation()
   }, [id])
 
@@ -28,7 +29,16 @@ const LocationDetails = () => {
         {locationDetails.city} {locationDetails.state}
       </h3>
       <img src={locationDetails.image} />
-      <textarea></textarea>
+      {comments.map((comment) => (
+        <div>
+          <h3>{comment.User.username}</h3>
+          <p>{comment.content}</p>
+        </div>
+      ))}
+      <form>
+        <textarea rows="10" placeholder="..."></textarea>
+        <button>Post</button>
+      </form>
     </div>
   )
 }
