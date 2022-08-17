@@ -16,6 +16,8 @@ const LocationDetails = () => {
     getLocation()
   }, [id])
 
+  useEffect(() => {}, [])
+
   return (
     <div>
       <h1>{locationDetails.beachName}</h1>
@@ -23,6 +25,7 @@ const LocationDetails = () => {
         {locationDetails.city} {locationDetails.state}
       </h3>
       <img src={locationDetails.image} />
+      <textarea></textarea>
     </div>
   )
 }
