@@ -6,6 +6,7 @@ import axios from 'axios'
 const LocationDetails = () => {
   let { id } = useParams()
   const [locationDetails, setLocationDetails] = useState('')
+  const [comments, setComments] = useState([])
 
   useEffect(() => {
     const getLocation = async () => {
@@ -13,10 +14,12 @@ const LocationDetails = () => {
       setLocationDetails(res.data)
       console.log(res.data)
     }
+    const getComments = async () => {
+      const res = await axios.get(`http://localhost:3001/api/comments/${id}/5`)
+    }
+
     getLocation()
   }, [id])
-
-  useEffect(() => {}, [])
 
   return (
     <div>
