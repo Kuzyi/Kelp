@@ -54,20 +54,27 @@ const LocationDetails = ({ user, authenticated }) => {
   }, [id])
 
   return (
-    <div>
-      <h1>{locationDetails.beachName}</h1>
-      <h3>
+    <div className="location">
+      <h1 className="locationBeach">{locationDetails.beachName}</h1>
+      <h3 className="locationName">
         {locationDetails.city} {locationDetails.state}
       </h3>
-      <img src={locationDetails.image} />
-      <form>
+      <img
+        className="location-img"
+        alt="{locationDetails.beachName}"
+        src={locationDetails.image}
+      />
+      <form className="comment-form">
         <textarea
+          className="commentBox"
           rows="10"
           placeholder="..."
           name="content"
           onChange={handleChange}
         ></textarea>
-        <button onClick={handleSubmit}>Post</button>
+        <button onClick={handleSubmit} className="postButton">
+          Post
+        </button>
       </form>
       {comments.map((comment) => (
         <SpecificComment
