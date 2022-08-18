@@ -40,7 +40,6 @@ const App = () => {
       email
     })
     toggleAuthenticated(true)
-    console.log(authenticated)
   }
 
   useEffect(() => {
