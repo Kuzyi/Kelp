@@ -27,7 +27,7 @@ const Nav = ({ authenticated, user, handleLogOut }) => {
     <header>
       <Link to="/">
         <div className="logo-wrapper" alt="logo">
-        <img src="" />
+        <img className='kelp-logo' src="https://i.imgur.com/LWwA2ZI.png" />
         </div>
       </Link>
       {authenticated && user ? authenticatedOptions : publicOptions}

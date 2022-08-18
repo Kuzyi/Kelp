@@ -20,10 +20,14 @@ const LocationList = ({ user, authenticated }) => {
   }
 
   return (
-    <div>
+    <div className="locations">
       {locations.map((location) => (
-        <div onClick={() => showLocationDetails(location)} key={location.id}>
-          <h1>{location.beachName}</h1>
+        <div
+          className="location-div"
+          onClick={() => showLocationDetails(location)}
+          key={location.id}
+        >
+          <h1 className="location-name">{location.beachName}</h1>
         </div>
       ))}
     </div>
