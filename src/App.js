@@ -21,11 +21,11 @@ const App = () => {
   // }, [])
 
   const [authenticated, toggleAuthenticated] = useState(false)
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState({})
 
   const handleLogOut = () => {
     //Reset all auth related state and clear localStorage
-    setUser(null)
+    setUser({})
     toggleAuthenticated(false)
     localStorage.clear()
   }

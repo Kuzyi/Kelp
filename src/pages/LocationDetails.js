@@ -7,6 +7,28 @@ const LocationDetails = ({ user, authenticated }) => {
   let { id } = useParams()
   const [locationDetails, setLocationDetails] = useState('')
   const [comments, setComments] = useState([])
+  let [newComment, setNewComment] = useState({
+    content: '',
+    locationId: id,
+    userId: user.id
+  })
+
+  // console.log(user.id)
+  console.log(user)
+
+  const handleChange = (e) => {
+    setNewComment({ ...newComment, [e.target.name]: e.target.value })
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    console.log(newComment)
+    await Client.post('/api/comments/', {
+      content: newComment.content,
+      locationId: newComment.locationId,
+      userId: newComment.userId
+    })
+  }
 
   useEffect(() => {
     const getLocation = async () => {
@@ -21,6 +43,7 @@ const LocationDetails = ({ user, authenticated }) => {
 
     getLocation()
     getComments()
+
   }, [id])
 
   return (
@@ -53,11 +76,15 @@ const LocationDetails = ({ user, authenticated }) => {
         </div>
       ))}
       <form>
-        <textarea rows="10" placeholder="..."></textarea>
-        <button>Post</button>
+        <textarea
+          rows="10"
+          placeholder="..."
+          name="content"
+          onChange={handleChange}
+        ></textarea>
+        <button onSubmit={handleSubmit}>Post</button>
       </form>
     </div>
   )
 }
-
 export default LocationDetails
