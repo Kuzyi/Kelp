@@ -100,7 +100,9 @@ main {
 
 .card-overlay {
   /* border: 2px solid var(--primary-button-hover); */
-  width: 100%;
+
+  width: 60%;
+
   padding: 1em;
   border-radius: 8px;
   box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.3);
