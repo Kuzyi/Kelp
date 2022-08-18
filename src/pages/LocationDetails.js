@@ -40,8 +40,10 @@ const LocationDetails = ({ user, authenticated }) => {
       setComments(res.data)
       console.log(res.data)
     }
-    getComments()
+
     getLocation()
+    getComments()
+
   }, [id])
 
   return (
