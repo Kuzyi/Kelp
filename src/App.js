@@ -32,8 +32,15 @@ const App = () => {
 
   const checkToken = async () => {
     const user = await CheckSession()
-    setUser(user)
+    const id = localStorage.getItem('id')
+    const email = localStorage.getItem('email')
+    setUser({
+      user,
+      id,
+      email
+    })
     toggleAuthenticated(true)
+    console.log(authenticated)
   }
 
   useEffect(() => {

@@ -10,16 +10,17 @@ const LocationDetails = ({ user, authenticated }) => {
 
   useEffect(() => {
     const getLocation = async () => {
-      const res = await axios.get(`http://localhost:3001/api/locations/${id}`)
+      const res = await Client.get(`/api/locations/${id}`)
       setLocationDetails(res.data)
     }
     const getComments = async () => {
-      const res = await axios.get(`http://localhost:3001/api/comments/${id}`)
+      const res = await Client.get(`/api/comments/${id}`)
       setComments(res.data)
       console.log(res.data)
     }
     getComments()
     getLocation()
+    console.log(user.id)
   }, [id])
 
   return (
@@ -33,7 +34,9 @@ const LocationDetails = ({ user, authenticated }) => {
         <div>
           <h3>{comment.User.username}</h3>
           <p>{comment.content}</p>
-          {authenticated && user && comment.User.id === user.id ? (
+          {authenticated &&
+          user &&
+          parseInt(comment.User.id) === parseInt(user.id) ? (
             <button
               onClick={async () => {
                 const commentToDelete = parseInt(comment.id)
@@ -41,6 +44,7 @@ const LocationDetails = ({ user, authenticated }) => {
                 console.log(comment)
                 console.log(user)
                 await Client.delete(`/api/comments/${commentToDelete}`)
+                document.location.reload()
               }}
             >
               X
