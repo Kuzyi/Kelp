@@ -329,18 +329,18 @@ h1.location-name:hover img {
   margin: 50px;
   }
   
- .overflow-wrap {
+.overflow-wrap {
   overflow-wrap: break-word;
- }
+}
   
- h4 {
+h4 {
   margin: 0;
   overflow-wrap: break-all;
- }
+}
   
- .comments-button {
+.comments-button {
   display: inline-block;
- }
+}
   
   .comments button {
   margin-top: 30px;
