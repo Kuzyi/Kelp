@@ -70,15 +70,6 @@ const App = () => {
               />
             }
           />
-          <Route
-            path="/signin"
-            element={
-              <SignIn
-                setUser={setUser}
-                toggleAuthenticated={toggleAuthenticated}
-              />
-            }
-          />
           <Route path="/register" element={<Register />} />
           <Route
             path="/LocationList"

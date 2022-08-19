@@ -11,7 +11,9 @@ const Home = ({ user, authenticated, setUser, toggleAuthenticated }) => {
         <img src="https://imgur.com/yeAWtvH.png" alt="kelp-logo" />
         <div>Hello, {user.username}</div>
         <section className="welcome-signin">
-          <button>Check out our locations!</button>
+          <button onClick={() => navigate('/LocationList')}>
+            Check out our locations!
+          </button>
         </section>
       </div>
     )

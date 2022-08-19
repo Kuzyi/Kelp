@@ -31,7 +31,7 @@ const Register = () => {
       password: '',
       confirmPassword: ''
     })
-    navigate('/signin')
+    navigate('/')
   }
 
   return (
@@ -92,7 +92,7 @@ const Register = () => {
                 formValues.confirmPassword === formValues.password)
             }
           >
-            Sign In
+            Register
           </button>
         </form>
       </div>

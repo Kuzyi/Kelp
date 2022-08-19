@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom'
 import Client from '../services/api'
 import { useState, useEffect } from 'react'
 import SpecificComment from '../components/SpecificComment'
+import { useNavigate } from 'react-router-dom'
 
 const LocationDetails = ({ user, authenticated }) => {
   let { id } = useParams()
@@ -10,6 +11,7 @@ const LocationDetails = ({ user, authenticated }) => {
   let [newComment, setNewComment] = useState({
     content: ''
   })
+  let navigate = useNavigate()
 
   // console.log(user.id)
   console.log('this is passed down user object', user)
@@ -55,6 +57,9 @@ const LocationDetails = ({ user, authenticated }) => {
 
   return (
     <div className="location">
+      <button className="back" onClick={() => navigate('/LocationList')}>
+        Return to Surf Spots
+      </button>
       <h1 className="locationBeach">{locationDetails.beachName}</h1>
       <h3 className="locationName">
         {locationDetails.city} {locationDetails.state}
