@@ -5,14 +5,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Hind&display=swap');
  
 :root {
- --primary-bg: #000411;
- --link-color-primary: #aeb7b3;
- --secondary-bg: #e1efe6;
- --link-color-secondary: #e1efe6;
- --primary-button-hover: #160c28;
- /* --background-prim: #5cc2cc; */
- /* --background-prim:   #eaf4f6; */
- --background-prim:   #f4f3f7;
  --color-1: #5cc2cc;
  --color-2: #0c717e;
  --color-3: #4c4b4e;
@@ -52,7 +44,6 @@ header {
  color: rgb(0, 0, 0);
  max-height: 4em;
  display: flex;
- /* justify-content: space-between; */
  align-items: center;
  background-color: var(--color-11);
 }
@@ -113,14 +104,14 @@ main {
  
 .home-container button {
  padding: 0.8em 1.2em;
- background-color: var(--primary-bg);
- color: var(--link-color-secondary);
+ background-color: var(--color-11);
+ color: var(--color-9);
  font-size: 1.1rem;
 }
  
 .home-container button:hover {
  transform: scale(1.1);
- background-color: var(--primary-button-hover);
+ background-color: var(--color-11);
  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.3);
 }
  
@@ -154,7 +145,7 @@ form label {
  padding: 0.6em 1.2em;
  margin: 0.5em auto;
  width: 100%;
- border-color: var(--primary-bg);
+ border-color: var(--color-11);
  font-size: 1.1rem;
  outline: none;
  margin-left: -10%;
@@ -165,9 +156,9 @@ input::placeholder {
 }
  
 form button {
- background-color: var(--primary-button-hover);
+ background-color: var(--color-11);
  margin: 1em 0;
- color: var(--link-color-secondary);
+ color: var(--color-7);
  align-self: center;
  width: 100%;
 }
@@ -196,8 +187,8 @@ form button:disabled {
 .card {
  width: 350px;
  min-height: 500px;
- background-color: var(--primary-bg);
- color: var(--secondary-bg);
+ background-color: var(--color-11);
+ color: var(--color-6);
  border-radius: 8px;
  padding: 1em;
 }
