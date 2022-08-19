@@ -13,9 +13,6 @@ const LocationDetails = ({ user, authenticated }) => {
   })
   let navigate = useNavigate()
 
-  // console.log(user.id)
-  console.log('this is passed down user object', user)
-
   const handleChange = (e) => {
     setNewComment({ ...newComment, [e.target.name]: e.target.value })
     console.log('this is teh new comment', newComment)
@@ -81,15 +78,18 @@ const LocationDetails = ({ user, authenticated }) => {
           Post
         </button>
       </form>
-      {comments.map((comment) => (
-        <SpecificComment
-          comment={comment}
-          handleSubmit={handleSubmit}
-          user={user}
-          authenticated={authenticated}
-          id={id}
-        />
-      ))}
+      <div className="specific-comment">
+        {comments.map((comment) => (
+          <SpecificComment
+            comment={comment}
+            handleSubmit={handleSubmit}
+            user={user}
+            authenticated={authenticated}
+            id={id}
+            key={comment.id}
+          />
+        ))}
+      </div>
     </div>
   )
 }

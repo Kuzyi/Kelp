@@ -12,8 +12,6 @@ const SpecificComment = (props) => {
     setNewUpdate({ ...newUpdate, [e.target.name]: e.target.value })
   }
 
-  console.log(props)
-
   const handleSubmitUpdate = async (e) => {
     e.preventDefault()
     await Client.put(`/api/comments/${newUpdate.id}`, {
@@ -24,9 +22,8 @@ const SpecificComment = (props) => {
 
   return (
     <div>
-      <div>
-        <h3>{props.comment.User.username}</h3>
-
+      <div className="comments">
+        <h4>{props.comment.User.username}</h4> <hr />
         {updateStatus ? (
           <form>
             <textarea
@@ -40,18 +37,15 @@ const SpecificComment = (props) => {
             <button onClick={handleSubmitUpdate}>Submit Update</button>
           </form>
         ) : (
-          <p>{props.comment.content}</p>
+          <p className="overflow-wrap">{props.comment.content}</p>
         )}
         {props.authenticated &&
         props.user &&
         parseInt(props.comment.User.id) === parseInt(props.user.id) ? (
-          <div>
+          <div className="comments-button">
             <button
               onClick={async () => {
                 const commentToDelete = parseInt(props.comment.id)
-                // console.log(commentToDelete)
-                // console.log(comment)
-                // console.log(user)
                 await Client.delete(`/api/comments/${commentToDelete}`)
                 document.location.reload()
               }}
