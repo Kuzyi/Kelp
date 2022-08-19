@@ -238,6 +238,17 @@ margin-left: 10%;
  font-size:4ch;
  font-weight: 900;
 }
+
+h1.location-name img {
+  display: none;
+  position: absolute;
+  left: 700px;
+  width: 200px;
+  height: 150px;
+}
+h1.location-name:hover img {
+  display: inherit;
+}
  
 /* location details */
  

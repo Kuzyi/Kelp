@@ -27,7 +27,10 @@ const LocationList = ({ user, authenticated }) => {
           onClick={() => showLocationDetails(location)}
           key={location.id}
         >
-          <h1 className="location-name">{location.beachName}</h1>
+          <h1 className="location-name">
+            <img src={location.image} />
+            {location.beachName}
+          </h1>
         </div>
       ))}
     </div>
