@@ -37,4 +37,18 @@ Kelp is an online surf-spot review site in which surfers share their experiences
 - [x] Save your favorite surf-spots
 - [x] See the current conditons of your favorite surf spots
 
-## **_Credits_**
+## **_Credits and references_**
+
+images were taken from:
+
+surfline.com
+
+usasurfing.com
+
+fishingbooker.com
+
+cloudfront.net
+
+mycapecodblog.com
+
+cloudinary.com
