@@ -18,7 +18,6 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log(formValues)
     await RegisterUser({
       username: formValues.username,
       email: formValues.email,

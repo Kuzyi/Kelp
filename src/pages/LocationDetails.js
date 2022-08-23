@@ -15,19 +15,9 @@ const LocationDetails = ({ user, authenticated }) => {
 
   const handleChange = (e) => {
     setNewComment({ ...newComment, [e.target.name]: e.target.value })
-    console.log('this is teh new comment', newComment)
   }
 
   const handleSubmit = async (e) => {
-    console.log(
-      'I HIT SUBMIT, here is what is being sent to backend',
-      'content:',
-      newComment.content,
-      'id',
-      id,
-      'user.id:',
-      user.id
-    )
     e.preventDefault()
     await Client.post('/api/comments/', {
       content: newComment.content,

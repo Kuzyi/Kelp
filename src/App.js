@@ -11,20 +11,10 @@ import { CheckSession } from './services/Auth'
 import axios from 'axios'
 
 const App = () => {
-  // const [location, setLocation] = useState()
-  // useEffect(() => {
-  //   const getLocation = async () => {
-  //     const res = await axios.get(`${BASE_URL}/api/locations/view`)
-  //     console.log(res.data)
-  //   }
-  //   getLocation()
-  // }, [])
-
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState({})
 
   const handleLogOut = () => {
-    //Reset all auth related state and clear localStorage
     setUser({})
     toggleAuthenticated(false)
     localStorage.clear()
